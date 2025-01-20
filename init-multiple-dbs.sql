@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS userservice;
+
+CREATE USER IF NOT EXISTS 'culeAkash'@'%' IDENTIFIED BY 'Akashjais@929';
+
+GRANT ALL PRIVILEGES ON userservice.* TO 'culeAkash'@'%';
+
+FLUSH PRIVILEGES;
