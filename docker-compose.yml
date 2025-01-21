@@ -12,5 +12,19 @@ services:
       - mysql_data:/var/lib/mysql
       - ./init-multiple-dbs.sql:/docker-entrypoint-initdb.d/init-multiple-dbs.sql
 
+  rabbitmq:
+    image: rabbitmq:latest
+    container_name: rabbitmq-container
+    ports:
+      - "5672:5672"   # RabbitMQ AMQP port
+      - "15672:15672" # RabbitMQ Management plugin port
+    environment:
+      RABBITMQ_DEFAULT_USER: culeAkash
+      RABBITMQ_DEFAULT_PASS: Akashjais@929
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    restart: always
+
 volumes:
   mysql_data:
+  rabbitmq_data:
