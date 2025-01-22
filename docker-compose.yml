@@ -13,11 +13,11 @@ services:
       - ./init-multiple-dbs.sql:/docker-entrypoint-initdb.d/init-multiple-dbs.sql
 
   rabbitmq:
-    image: rabbitmq:latest
+    image: rabbitmq:3-management
     container_name: rabbitmq-container
     ports:
-      - "5672:5672"   # RabbitMQ AMQP port
-      - "15672:15672" # RabbitMQ Management plugin port
+      - "15672:15672" # Management UI
+      - "5672:5672"   # Messaging
     environment:
       RABBITMQ_DEFAULT_USER: culeAkash
       RABBITMQ_DEFAULT_PASS: Akashjais@929
