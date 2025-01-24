@@ -10,3 +10,6 @@
 [submodule "user-service"]
 	path = user-service
 	url = https://github.com/culeAkash/user-service-movix.git
+[submodule "movie-service"]
+	path = movie-service
+	url = https://github.com/culeAkash/movie-service-movix.git

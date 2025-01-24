@@ -12,6 +12,13 @@ services:
       - mysql_data:/var/lib/mysql
       - ./init-multiple-dbs.sql:/docker-entrypoint-initdb.d/init-multiple-dbs.sql
 
+  adminer:
+    image: adminer:latest
+    container_name: adminer-container
+    restart: always
+    ports:
+      - "3000:8080"
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq-container
