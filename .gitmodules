@@ -13,3 +13,9 @@
 [submodule "movie-service"]
 	path = movie-service
 	url = https://github.com/culeAkash/movie-service-movix.git
+[submodule "rating-service"]
+	path = rating-service
+	url = https://github.com/culeAkash/rating-service-movix.git
+[submodule "review-service"]
+	path = review-service
+	url = https://github.com/culeAkash/review-service-movix.git
