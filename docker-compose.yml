@@ -12,6 +12,31 @@ services:
       - mysql_data:/var/lib/mysql
       - ./init-multiple-dbs.sql:/docker-entrypoint-initdb.d/init-multiple-dbs.sql
 
+  postgresql:
+    image: postgres
+    container_name: postgresql-container
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  neo4j:
+    image: neo4j:latest
+    container_name: neo4j-container
+    environment:
+      NEO4J_AUTH: neo4j/Akashjais@929
+    ports:
+      - "7474:7474" # Neo4j Browser
+      - "7687:7687" # Bolt protocol (used by Spring Boot)
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_import:/var/lib/neo4j/import
+
   adminer:
     image: adminer:latest
     container_name: adminer-container
@@ -49,3 +74,7 @@ volumes:
   mysql_data:
   rabbitmq_data:
   minio_data:
+  postgres_data:
+  neo4j_data:
+  neo4j_logs:
+  neo4j_import:
